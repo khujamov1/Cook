@@ -17,7 +17,7 @@ import {
 
 function App() {
 	return (
-		<div className="grid grid-cols-12 flex-grow">
+		<div className="grid grid-cols-12 flex-grow relative">
 			<MainNavbar />
 			<Routes>
 				<Route path="home" element={<Home />}>

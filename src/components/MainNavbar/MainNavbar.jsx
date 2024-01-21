@@ -3,7 +3,7 @@ import { LogOut, Logo, MainNavbarIcons } from "../../../public/icons";
 
 export const MainNavbar = () => {
 	return (
-		<nav className="flex flex-col">
+		<nav className="flex flex-col fixed h-screen">
 			<ul className="flex flex-col flex-grow bg-[#1F1D2B] ps-3">
 				<li className="flex-grow py-6 pe-6 ps-3 flex justify-center items-center">
 					<Link className="grow flex justify-center" to="/home/">

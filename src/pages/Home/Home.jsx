@@ -4,7 +4,7 @@ import { Home_Nav } from "../../constants";
 export const Home = () => {
 	return (
 		<>
-			<div className="col-span-8 pt-[13px] ms-1 pe-11 leading-[140%]">
+			<div className="col-start-2 col-span-8 pt-[13px] ms-1 pe-11 leading-[140%]">
 				<div className="flex items-center justify-between mb-6">
 					<div>
 						<h1 className="text-[28px] font-semibold">Jaegar Resto</h1>
@@ -39,7 +39,7 @@ export const Home = () => {
 				</nav>
 				<Outlet />
 			</div>
-			<div className="col-span-3 bg-[#1F1D2B]"></div>
+			<div className="fixed col-start-10 h-screen w-full col-span-3 bg-[#1F1D2B]"></div>
 		</>
 	);
 };
