@@ -28,7 +28,7 @@ export const Home = () => {
 										className={
 											("transition-colors", ({ isActive }) => (isActive ? "home-link-active" : ""))
 										}
-										to={"/home/" + item.path}>
+										to={"/home" + item.path}>
 										{item.name}
 										<span className="inline-block rounded-sm h-1 w-3/5"></span>
 									</NavLink>

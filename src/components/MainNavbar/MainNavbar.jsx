@@ -6,7 +6,7 @@ export const MainNavbar = () => {
 		<nav className="flex flex-col">
 			<ul className="flex flex-col flex-grow bg-[#1F1D2B] ps-3">
 				<li className="flex-grow py-6 pe-6 ps-3 flex justify-center items-center">
-					<Link className="grow flex justify-center" to="/home/hot-dishes">
+					<Link className="grow flex justify-center" to="/home/">
 						<img className="" src={Logo} width={24} height={24} alt="" />
 					</Link>
 				</li>

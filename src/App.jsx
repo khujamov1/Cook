@@ -21,7 +21,7 @@ function App() {
 			<MainNavbar />
 			<Routes>
 				<Route path="home" element={<Home />}>
-					<Route path="hot-dishes" element={<HotDishes />} />
+					<Route path="" element={<HotDishes />} />
 					<Route path="cold-dishes" element={<ColdDishes />} />
 					<Route path="soup" element={<Soup />} />
 					<Route path="grill" element={<Grill />} />
