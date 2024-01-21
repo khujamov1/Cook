@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font families */
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./assets/fonts/barlow-v12-latin-regular.woff2') format('woff2'),
+    url('./assets/fonts/barlow-v12-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('./assets/fonts/barlow-v12-latin-500.woff2') format('woff2'),
+    url('./assets/fonts/barlow-v12-latin-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url('./assets/fonts/barlow-v12-latin-600.woff2') format('woff2'),
+    url('./assets/fonts/barlow-v12-latin-600.woff') format('woff');
+}
+
+/* Mobile first */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Barlow", "Arial", sans-serif;
+  background-color: #252836;
+  color: #E0E6E9;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Sticky footer */
+.site-main {
+  flex-grow: 1;
+}
+
+.pending {
+  stroke: #ea7c69;
+}
+
+.main-navbar__item * {
+  box-sizing: content-box;
+}
+
+.active {
+  @apply bg-[#252836] rounded-s-xl text-white
+}
+
+.active * {
+
+  @apply bg-[#EA7C69] rounded-xl;
+  box-shadow: 0px 8px 24px 0px #ea7c6952;
+  fill: #fff;
+}
+
+.home-link-active {
+  @apply text-[#EA7C69]
+}
+
+.home-link-active span {
+  background-color: #EA7C69;
+}
+
+.template {
+  color: #EA7C69;
+}
+
+.dishes__select {
+  padding: 15px 14px 15px 44px;
+  background-image: url("/public/icons/arrowdown.svg");
+  background-repeat: no-repeat;
+  background-position: 14px;
+  border-radius: 8px;
+  border: 1px solid #393C49;
+  background-color: #1F1D2B;
+}
