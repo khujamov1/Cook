@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Home_Nav } from "../../constants";
+import { useEffect, useRef, useState } from "react";
 
 export const Home = () => {
 	return (
@@ -39,7 +40,57 @@ export const Home = () => {
 				</nav>
 				<Outlet />
 			</div>
-			<div className="fixed col-start-10 h-screen w-full col-span-3 bg-[#1F1D2B]"></div>
+			<div className="fixed col-start-10 h-screen col-span-3 w-3/12 grow p-6 bg-[#1F1D2B]">
+				<h2 className="text-[20px] font-medium mb-6">Orders #34562</h2>
+				<div className="labels mb-6">
+					<input
+						className="input__radio hidden"
+						type="radio"
+						name="type_meal"
+						id="radio0"
+						value={0}
+						defaultChecked
+					/>
+					<label
+						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
+						htmlFor="radio0">
+						Dine In
+					</label>
+					<input
+						className="input__radio hidden"
+						type="radio"
+						name="type_meal"
+						id="radio1"
+						value={1}
+					/>
+					<label
+						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
+						htmlFor="radio1">
+						To Go
+					</label>
+					<input
+						className="input__radio hidden"
+						type="radio"
+						name="type_meal"
+						id="radio2"
+						value={2}
+					/>
+					<label
+						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
+						htmlFor="radio2">
+						Delivery
+					</label>
+				</div>
+				<table className="flex">
+					{/* <thead>
+						<th>
+							<td>Item</td>
+							<td>Qty</td>
+							<td>Price</td>
+						</th>
+					</thead> */}
+				</table>
+			</div>
 		</>
 	);
 };
