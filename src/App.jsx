@@ -33,7 +33,7 @@ function App() {
 				<Route path="dashboard" element={<Dashboard />} />
 				<Route path="message" element={<Message />} />
 				<Route path="notification" element={<Notification />} />
-				<Route path="setting" element={<Setting />} />
+				<Route path="settings" element={<Setting />} />
 			</Routes>
 		</div>
 	);

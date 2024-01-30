@@ -97,8 +97,6 @@ export const Temporary_Dishes = [
 	},
 ];
 
-("");
-
 export const Temporary_Dine_In = [
 	{
 		id: 1,
