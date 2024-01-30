@@ -120,11 +120,16 @@ img {
   color: #fff;
 }
 
-
-
-#radio0:checked+label,
-#radio1:checked+label,
-#radio2:checked+label {
+.meal__types:checked+span {
   background-color: #ea7c69;
   color: #fff;
+  border-color: #ea7c69;
+}
+
+.btn {
+  @apply h-auto min-h-min
+}
+
+.home__delete-btn {
+  @apply border-[#FF7CA3]
 }

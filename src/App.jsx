@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useMatch } from "react-router-dom";
 import { MainNavbar } from "./components/MainNavbar/MainNavbar";
 import {
 	Dashboard,
@@ -14,7 +14,6 @@ import {
 	HotDishes,
 	ColdDishes,
 } from "./pages";
-import { useEffect } from "react";
 
 function App() {
 	return (
@@ -22,8 +21,8 @@ function App() {
 			<MainNavbar />
 			<Routes>
 				<Route path="/" element={<Navigate to="/home/" />} />
-				<Route path="home" element={<Home />}>
-					<Route path="" element={<HotDishes />} />
+				<Route path="home/*" element={<Home />}>
+					<Route index element={<HotDishes />} />
 					<Route path="cold-dishes" element={<ColdDishes />} />
 					<Route path="soup" element={<Soup />} />
 					<Route path="grill" element={<Grill />} />

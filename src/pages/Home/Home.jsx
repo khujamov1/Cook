@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Home_Nav } from "../../constants";
-import { useEffect, useRef, useState } from "react";
+import { Home_Nav, Temporary_Dine_In } from "../../constants";
+import Delete from "../../../public/icons/Delete";
 
 export const Home = () => {
 	return (
@@ -40,56 +40,82 @@ export const Home = () => {
 				</nav>
 				<Outlet />
 			</div>
-			<div className="fixed col-start-10 h-screen col-span-3 w-3/12 grow p-6 bg-[#1F1D2B]">
+			<div className="sticky top-0  col-start-10 h-screen col-span-3 grow p-6 bg-[#1F1D2B]">
 				<h2 className="text-[20px] font-medium mb-6">Orders #34562</h2>
-				<div className="labels mb-6">
-					<input
-						className="input__radio hidden"
-						type="radio"
-						name="type_meal"
-						id="radio0"
-						value={0}
-						defaultChecked
-					/>
-					<label
-						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
-						htmlFor="radio0">
-						Dine In
+				<div className="flex gap-x-2 mb-6">
+					<label>
+						<input
+							className="meal__types visually-hidden"
+							type="radio"
+							name="type_meal"
+							value="Dine in"
+							defaultChecked
+						/>
+						<span className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] border border-[#393C49]">
+							Dine In
+						</span>
 					</label>
-					<input
-						className="input__radio hidden"
-						type="radio"
-						name="type_meal"
-						id="radio1"
-						value={1}
-					/>
-					<label
-						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
-						htmlFor="radio1">
-						To Go
+					<label>
+						<input
+							className="meal__types visually-hidden"
+							type="radio"
+							name="type_meal"
+							value="To Go"
+						/>
+						<span className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] border border-[#393C49]">
+							To Go
+						</span>
 					</label>
-					<input
-						className="input__radio hidden"
-						type="radio"
-						name="type_meal"
-						id="radio2"
-						value={2}
-					/>
-					<label
-						className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] h-auto min-h-min"
-						htmlFor="radio2">
-						Delivery
+					<label>
+						<input
+							className="meal__types visually-hidden"
+							type="radio"
+							name="type_meal"
+							value="Delivery"
+						/>
+						<span className="btn bg-inherit text-[#ea7c69] hover:bg-[#EA7C69] hover:text-white text-[14px] font-semibold input_label py-[7px] px-[12px] border border-[#393C49]">
+							Delivery
+						</span>
 					</label>
 				</div>
-				<table className="flex">
-					{/* <thead>
-						<th>
-							<td>Item</td>
-							<td>Qty</td>
-							<td>Price</td>
-						</th>
-					</thead> */}
-				</table>
+				<div className="grid grid-cols-5 text-center pb-6 border-b border-[#393C49]">
+					<strong className="col-span-3 text-left">Item</strong>
+					<strong className="grow-1">Qty</strong>
+					<strong className="grow-1">Price</strong>
+				</div>
+				<ul className="pt-7 flex flex-col gap-y-7 max-h-[414px] overflow-y-scroll">
+					{Temporary_Dine_In.map(({ img, title, price, id }) => (
+						<li key={id}>
+							<div className="grid grid-cols-5 mb-2.5 gap-x-4">
+								<div className="flex items-start col-span-3">
+									<img className="me-2 shrink-0" src={img} width={40} height={40} alt="" />
+									<div>
+										<h4 className="mb-1 text-sm leading-[130%] font-medium whitespace-nowrap truncate w-36">
+											{title}
+										</h4>
+										<span className="text-xs leading-[140%] ">{price}</span>
+									</div>
+								</div>
+								<button className="bg-[#2D303E] p-3.5 pb-3 rounded-lg font-medium" type="button">
+									2
+								</button>
+								<strong className="self-center">$ 4,58</strong>
+							</div>
+							<div className="grid grid-cols-5 gap-x-4">
+								<input
+									className="bg-[#2D303E] outline-none p-3.5 rounded-lg grow col-span-4"
+									placeholder="Order Note..."
+									type="text"
+								/>
+								<button
+									className="flex items-center justify-center border rounded-lg border-[#EA7C69]"
+									type="button">
+									<Delete className="text-[#EA7C69] text-xl" />
+								</button>
+							</div>
+						</li>
+					))}
+				</ul>
 			</div>
 		</>
 	);

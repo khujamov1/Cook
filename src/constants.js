@@ -96,3 +96,30 @@ export const Temporary_Dishes = [
 		available: "17 Bowls available",
 	},
 ];
+
+export const Temporary_Dine_In = [
+	{
+		id: 1,
+		img: "/images/Image 1.png",
+		title: "Spicy seasoned seafood noodles",
+		price: "$ 2.29",
+	},
+	{
+		id: 2,
+		img: "/images/Image 2.png",
+		title: "Salted Pasta with mushroom sauce",
+		price: "$ 2.69",
+	},
+	{
+		id: 3,
+		img: "/images/Image 6.png",
+		title: "Spicy instant noodle with special omelette",
+		price: "$ 3.59",
+	},
+	{
+		id: 4,
+		img: "/images/Image 7.png",
+		title: "Healthy noodle with spinach leaf",
+		price: "$ 3.29",
+	},
+];
