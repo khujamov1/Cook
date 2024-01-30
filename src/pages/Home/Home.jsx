@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Home_Nav, Temporary_Dine_In } from "../../constants";
 import Delete from "../../../public/icons/Delete";
+import "flowbite/dist/flowbite.min.js";
 
 export const Home = () => {
 	return (
@@ -83,7 +84,7 @@ export const Home = () => {
 					<strong className="grow-1">Qty</strong>
 					<strong className="grow-1">Price</strong>
 				</div>
-				<ul className="pt-7 flex flex-col gap-y-7 max-h-[414px] overflow-y-scroll">
+				<ul className="pt-7 mb-7 flex flex-col gap-y-7 max-h-[51%] overflow-y-scroll">
 					{Temporary_Dine_In.map(({ img, title, price, id }) => (
 						<li key={id}>
 							<div className="grid grid-cols-5 mb-2.5 gap-x-4">
@@ -116,7 +117,29 @@ export const Home = () => {
 						</li>
 					))}
 				</ul>
+				<div className="mb-6">
+					<p className="flex justify-between mb-4">
+						Discount <strong>$0</strong>
+					</p>
+					<p className="flex justify-between">
+						Sub total <strong> $ 21,03</strong>
+					</p>
+				</div>
+				<button
+					className="flex w-full text-[14px] font-semibold grow justify-center py-3.5 bg-[#EA7C69] rounded-lg"
+					type="button"
+					data-drawer-target="drawer-right-example"
+					data-drawer-show="drawer-right-example"
+					data-drawer-placement="right"
+					aria-controls="drawer-right-example">
+					Continue to Payment
+				</button>
 			</div>
+			<div
+				id="drawer-right-example"
+				className="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-[#1F1D2B] w-1/3"
+				tabIndex={-1}
+				aria-labelledby="drawer-right-label"></div>
 		</>
 	);
 };
