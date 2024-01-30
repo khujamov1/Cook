@@ -2,6 +2,9 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Home_Nav, Temporary_Dine_In } from "../../constants";
 import Delete from "../../../public/icons/Delete";
 import "flowbite/dist/flowbite.min.js";
+import Card from "../../../public/icons/Card";
+import Paypal from "../../../public/icons/Paypal";
+import Cash from "../../../public/icons/Cash";
 
 export const Home = () => {
 	return (
@@ -15,7 +18,7 @@ export const Home = () => {
 					<label className="bg-[#393C49]  text-sm flex items-center p-3 rounded-lg">
 						<img className="me-2" src={"/icons/search.svg"} width={20} height={20} alt="" />
 						<input
-							className="bg-[#393C49] outline-none"
+							className="bg-[#393C49] outline-none border-0 focus:ring-0"
 							placeholder="Search for food, coffe, etc.."
 							type="search"
 						/>
@@ -41,7 +44,7 @@ export const Home = () => {
 				</nav>
 				<Outlet />
 			</div>
-			<div className="sticky top-0  col-start-10 h-screen col-span-3 grow p-6 bg-[#1F1D2B]">
+			<div className="sticky top-0  h-screen col-span-3 grow p-6 bg-[#1F1D2B]">
 				<h2 className="text-[20px] font-medium mb-6">Orders #34562</h2>
 				<div className="flex gap-x-2 mb-6">
 					<label>
@@ -85,7 +88,7 @@ export const Home = () => {
 					<strong className="grow-1">Price</strong>
 				</div>
 				<ul className="pt-7 mb-7 flex flex-col gap-y-7 max-h-[51%] overflow-y-scroll">
-					{Temporary_Dine_In.map(({ img, title, price, id }) => (
+					{Temporary_Dine_In.map(({ img, title, price, count, id }) => (
 						<li key={id}>
 							<div className="grid grid-cols-5 mb-2.5 gap-x-4">
 								<div className="flex items-start col-span-3">
@@ -98,7 +101,7 @@ export const Home = () => {
 									</div>
 								</div>
 								<button className="bg-[#2D303E] p-3.5 pb-3 rounded-lg font-medium" type="button">
-									2
+									{count}
 								</button>
 								<strong className="self-center">$ 4,58</strong>
 							</div>
@@ -137,9 +140,87 @@ export const Home = () => {
 			</div>
 			<div
 				id="drawer-right-example"
-				className="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-[#1F1D2B] w-1/3"
+				className="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-[#1F1D2B] w-3/12 p-6"
 				tabIndex={-1}
-				aria-labelledby="drawer-right-label"></div>
+				aria-labelledby="drawer-right-label">
+				<div className="pb-6 mb-6 border-b border-[#393C49]">
+					<h3 className="text-[28px] font-semibold mb-2">Payment</h3>
+					<p className="text-[#ABBBC2]">3 payment method available</p>
+				</div>
+				<h4 className="mb-4 text-[20]">Payment Method</h4>
+				<div className="flex gap-x-2 justify-stretch mb-4">
+					<label>
+						<input
+							className="method__types visually-hidden"
+							type="radio"
+							name="payment_method"
+							defaultChecked
+						/>
+						<span className="inline-flex flex-col items-center px-4 border text-[#ABBBC2] border-[#393C49] rounded-lg py-2.5 cursor-pointer text-[14px] leading-[130%] relative min-w-[101px] whitespace-nowrap">
+							{<Card className="w-6 h-6" />}
+							Credit Card
+						</span>
+					</label>
+					<label>
+						<input className="method__types visually-hidden" type="radio" name="payment_method" />
+						<span className="inline-flex flex-col items-center px-4 border text-[#ABBBC2] border-[#393C49] rounded-lg py-2.5 cursor-pointer text-[14px] leading-[130%] relative min-w-[101px]">
+							{<Paypal className="w-6 h-6" />}
+							Paypal
+						</span>
+					</label>
+					<label>
+						<input className="method__types visually-hidden" type="radio" name="payment_method" />
+						<span className="inline-flex flex-col justify-between items-center px-4 border text-[#ABBBC2] border-[#393C49] rounded-lg py-2.5 cursor-pointer text-[14px] leading-[130%] relative min-w-[101px] whitespace-nowrap h-full">
+							{<Cash className="w-5 h-[19px]" />}
+							Credit Card
+						</span>
+					</label>
+				</div>
+				<div className="pb-4 border-b mb-4 border-[#393C49]">
+					<label className="font-medium" htmlFor="name">
+						Cardholder Name
+					</label>
+					<input
+						className="block mt-2 bg-[#2D303E] focus:ring-transparent border-[#393C49] rounded-lg w-full p-3.5 ring-0 focus:border-white mb-4"
+						type="text"
+						placeholder="Levi Ackerman"
+						id="name"
+					/>
+					<label className="font-medium" htmlFor="number">
+						Card Number
+					</label>
+					<input
+						className="block mt-2 bg-[#2D303E] focus:ring-transparent border-[#393C49] rounded-lg w-full p-3.5 ring-0 focus:border-white mb-8"
+						type="text"
+						placeholder="2564 1421 0897 1244"
+						id="number"
+					/>
+					<div className="flex gap-x-[13px]">
+						<label className="font-medium">
+							Expiration Date
+							<input
+								className="mt-2 bg-[#2D303E] focus:ring-transparent border-[#393C49] rounded-lg w-full p-3.5 ring-0 focus:border-white"
+								type="month"
+							/>
+						</label>
+
+						<label className="font-medium">
+							CVV
+							<input
+								className="mt-2 bg-[#2D303E] focus:ring-transparent border-[#393C49] rounded-lg w-full p-3.5 ring-0 focus:border-white  tracking-[8px] text-[20px]"
+								type="password"
+								maxLength={3}
+								max={3}
+							/>
+						</label>
+					</div>
+				</div>
+				<div>
+					<select className="dishes__select text-white appearance-none">
+						<option defaultValue={""}>Dine In</option>
+					</select>
+				</div>
+			</div>
 		</>
 	);
 };

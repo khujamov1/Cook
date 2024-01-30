@@ -107,13 +107,14 @@ img {
 }
 
 .dishes__select {
-  padding: 15px 14px 15px 44px;
-  background-image: url("/public/icons/arrowdown.svg");
-  background-repeat: no-repeat;
-  background-position: 14px;
-  border-radius: 8px;
-  border: 1px solid #393C49;
-  background-color: #1F1D2B;
+  padding: 15px 14px 15px 44px !important;
+  background-image: url("/public/icons/arrowdown.svg") !important;
+  background-size: 20px !important;
+  background-repeat: no-repeat !important;
+  background-position: 14px !important;
+  border-radius: 8px !important;
+  border: 1px solid #393C49 !important;
+  background-color: #1F1D2B !important;
 }
 
 .active__radio {
@@ -133,4 +134,23 @@ img {
 
 .home__delete-btn {
   @apply border-[#FF7CA3]
+}
+
+input {
+  @apply border-0 focus:ring-0;
+}
+
+.method__types:checked+span {
+  @apply font-medium bg-[#252836] border-[#ABBBC2] text-white;
+}
+
+.method__types:checked+span::before {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../public/images/checkmark-circle.png");
+  content: "";
 }
