@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate, useMatch } from "react-router-dom";
 import { MainNavbar } from "./components/MainNavbar/MainNavbar";
+import { SettingsList } from "./components/settingsList/SettingsList";
 import {
 	Dashboard,
 	Discount,
@@ -33,7 +34,14 @@ function App() {
 				<Route path="dashboard" element={<Dashboard />} />
 				<Route path="message" element={<Message />} />
 				<Route path="notification" element={<Notification />} />
-				<Route path="setting" element={<Setting />} />
+				<Route path="setting/*" element={<Setting />}>
+					<Route index element={<SettingsList />} />
+					<Route path="cold-dishes" element={<ColdDishes />} />
+					<Route path="soup" element={<Soup />} />
+					<Route path="grill" element={<Grill />} />
+					<Route path="appetizer" element={<Appetizer />} />
+					<Route path="dessert" element={<Dessert />} />
+				</Route>
 			</Routes>
 		</div>
 	);
