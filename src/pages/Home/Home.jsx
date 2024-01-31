@@ -129,7 +129,7 @@ export const Home = () => {
 					</p>
 				</div>
 				<button
-					className="flex w-full text-[14px] font-semibold grow justify-center py-3.5 bg-[#EA7C69] rounded-lg"
+					className="flex w-full text-[14px] font-semibold grow justify-center py-3.5 bg-[#EA7C69] rounded-lg buttons__shadow"
 					type="button"
 					data-drawer-target="drawer-right-example"
 					data-drawer-show="drawer-right-example"
@@ -140,7 +140,7 @@ export const Home = () => {
 			</div>
 			<div
 				id="drawer-right-example"
-				className="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-[#1F1D2B] w-3/12 p-6"
+				className="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-[#1F1D2B] w-3/12 p-6 pt-16"
 				tabIndex={-1}
 				aria-labelledby="drawer-right-label">
 				<div className="pb-6 mb-6 border-b border-[#393C49]">
@@ -215,10 +215,36 @@ export const Home = () => {
 						</label>
 					</div>
 				</div>
-				<div>
-					<select className="dishes__select text-white appearance-none">
-						<option defaultValue={""}>Dine In</option>
-					</select>
+				<div className="flex gap-x-[13px]">
+					<label htmlFor="dishes__payment">
+						Order Type
+						<select
+							className="block dishes__select mt-2 text-white appearance-none"
+							id="dishes__payment">
+							<option defaultValue={""}>Dine In</option>
+						</select>
+					</label>
+					<label htmlFor="dishes__payment">
+						Table no.
+						<input
+							className="block mt-2 bg-[#2D303E] focus:ring-transparent border-[#393C49] rounded-lg w-full p-3.5 ring-0 focus:border-white mb-8 cursor-not-allowed"
+							type="number"
+							defaultValue={140}
+							disabled
+						/>
+					</label>
+				</div>
+				<div className="grid grid-cols-2 text-center gap-x-2">
+					<button
+						className="text-[14px] font-semibold py-3.5 border-[#EA7C69] border rounded-lg"
+						type="button">
+						Cancel
+					</button>
+					<button
+						className="text-[14px] buttons__shadow font-semibold py-3.5 bg-[#EA7C69] rounded-lg"
+						type="button">
+						Confirm Payment
+					</button>
 				</div>
 			</div>
 		</>

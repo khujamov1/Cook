@@ -30,6 +30,6 @@ export const MainNavbarIcons = [
 	},
 	{
 		img: Setting,
-		path: "/setting",
+		path: "/settings",
 	},
 ];

@@ -154,3 +154,7 @@ input {
   background-image: url("../public/images/checkmark-circle.png");
   content: "";
 }
+
+.buttons__shadow {
+  box-shadow: 0px 8px 24px 0px rgba(234, 124, 105, 0.40);
+}
