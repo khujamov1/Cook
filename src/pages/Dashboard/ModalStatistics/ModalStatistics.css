@@ -1,0 +1,88 @@
+.statistics {
+    border-radius: 8px;
+    background: var(--Base-Dark-Bg-2, #1F1D2B);
+    padding: 24px;
+}
+.header-statistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    box-shadow: 0px 9px 0px -6px rgba(111, 132, 147, 0.3);
+}
+.header-statistics__select  {
+    width: 95px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid var(--Base-Dark-Line, #393C49);
+    background-color: #1F1D2B;
+    outline: none;
+}
+.apex-item {
+
+}
+.apex-title {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.apex-title::after {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 49px);
+    width: 18px;
+    height: 18px;
+    background-color: #FF7CA3;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    content: "";
+}
+.apex-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.apex-title-two {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.apex-title-two::after {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 49px);
+    width: 18px;
+    height: 18px;
+    background-color: #FFB572;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    content: "";
+}
+
+
+.apex-title-three {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.apex-title-three::after {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 49px);
+    width: 18px;
+    height: 18px;
+    background-color: #65B0F6;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    content: "";
+}
