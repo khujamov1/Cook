@@ -1,0 +1,12 @@
+.modal-title {
+    color: var(--Text-Lighter, #E0E6E9);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%; 
+}
+.modal-text { 
+    color: var(--Text-Light, #ABBBC2);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%; 
+}

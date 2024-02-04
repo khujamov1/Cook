@@ -1,0 +1,9 @@
+.info-btn {
+    color: var(--Accents-Green, #50D1AA);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%; 
+    padding: 4px 12px;
+    border-radius: 30px;
+    background: rgba(107, 226, 190, 0.24);
+}
